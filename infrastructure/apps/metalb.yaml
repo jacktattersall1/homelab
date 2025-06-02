@@ -13,7 +13,7 @@ spec:
 
   destination:
     name: in-cluster
-    namespace: metalb-system
+    namespace: metallb-system
 
   syncPolicy:
     automated:

@@ -13,7 +13,7 @@ spec:
 
   destination:
     name: in-cluster
-    namespace: metalb
+    namespace: metalb-system
 
   syncPolicy:
     automated:
@@ -21,3 +21,12 @@ spec:
       prune: true
     syncOptions:
       - CreateNamespace=true
+
+  ignoreDifferences:
+    - group: infrastructure.cluster.x-k8s.io
+      kind: AzureCluster
+      jsonPointers:
+        - /spec/networkSpec/subnets/0/natGateway/ip/name
+        - /spec/networkSpec/subnets/0/natGateway/name
+        - /spec/networkSpec/subnets/0/routeTable/name
+        - /spec/networkSpec/subnets

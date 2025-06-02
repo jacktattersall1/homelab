@@ -23,10 +23,7 @@ spec:
       - CreateNamespace=true
 
   ignoreDifferences:
-    - group: infrastructure.cluster.x-k8s.io
-      kind: AzureCluster
+    - group: bgppeers.metallb.io
+      kind: CustomResourceDefinition
       jsonPointers:
-        - /spec/networkSpec/subnets/0/natGateway/ip/name
-        - /spec/networkSpec/subnets/0/natGateway/name
-        - /spec/networkSpec/subnets/0/routeTable/name
-        - /spec/networkSpec/subnets
+        - /spec/conversion/webhook/*

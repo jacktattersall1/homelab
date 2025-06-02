@@ -26,4 +26,4 @@ spec:
     - group: bgppeers.metallb.io
       kind: CustomResourceDefinition
       jsonPointers:
-        - /spec/conversion/webhook/*
+        - /spec/conversion/webhook/clientConfig/caBundle

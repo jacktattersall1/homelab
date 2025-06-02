@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/jacktattersall1/homelab.git
     targetRevision: HEAD
-    path: infrastructure/metalb
+    path: infrastructure/kustomizations/metalb
 
   destination:
     name: in-cluster

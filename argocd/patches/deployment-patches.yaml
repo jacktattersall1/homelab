@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-applicationset-controller
+  labels:
+    app.kubernetes.io/part-of: argocd
+spec:
+  template:
+    spec:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""

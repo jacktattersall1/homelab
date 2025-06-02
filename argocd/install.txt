@@ -1,0 +1,10 @@
+#single
+https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.5/manifests/install.yaml
+
+# ha
+https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.5/manifests/ha/install.yaml
+
+kubectl create namespace argocd
+kubectl apply -n argocd -k argocd/
+
+kubectl delete -n argocd -k argocd/

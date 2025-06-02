@@ -1,0 +1,3 @@
+open 6443 and 9443 from *
+
+~/go/bin/k0sctl apply --config k0sctl.yaml

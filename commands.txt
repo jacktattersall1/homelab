@@ -1,0 +1,2 @@
+kubectl label node k0s-w1 node-role.kubernetes.io/infra="" kubernetes.io/role=infra purpose=infra
+kubectl label node k0s-w2 node-role.kubernetes.io/workload="" kubernetes.io/role=workload purpose=workload

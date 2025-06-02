@@ -1,0 +1,50 @@
+apiVersion: k0sctl.k0sproject.io/v1beta1
+kind: Cluster
+metadata:
+  name: k0s-cluster
+  user: admin
+spec:
+  hosts:
+  - ssh:
+      address: 10.97.159.104
+      user: ubuntu
+      port: 22
+      keyPath: /home/jacktattersall/.ssh/id_rsa
+    role: controller
+  - ssh:
+      address: 10.97.159.119
+      user: ubuntu
+      port: 22
+      keyPath: /home/jacktattersall/.ssh/id_rsa
+    role: worker
+  - ssh:
+      address: 10.97.159.96
+      user: ubuntu
+      port: 22
+      keyPath: /home/jacktattersall/.ssh/id_rsa
+    role: worker
+  options:
+    wait:
+      enabled: true
+    drain:
+      enabled: true
+      gracePeriod: 2m0s
+      timeout: 5m0s
+      force: true
+      ignoreDaemonSets: true
+      deleteEmptyDirData: true
+      podSelector: ""
+      skipWaitForDeleteTimeout: 0s
+    concurrency:
+      limit: 30
+      uploads: 5
+    evictTaint:
+      enabled: false
+      taint: k0sctl.k0sproject.io/evict=true
+      effect: NoExecute
+      controllerWorkers: false
+  k0s:
+    config:
+      spec:
+        network:
+          provider: calico

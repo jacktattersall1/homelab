@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: metalb
+  name: metalb-app
   namespace: argocd
 spec:
   project: default

@@ -1,0 +1,4 @@
+https://istio.io/latest/docs/setup/getting-started/
+
+
+kubectl label namespace workloads istio-injection=enabled
